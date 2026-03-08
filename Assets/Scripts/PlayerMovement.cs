@@ -8,11 +8,13 @@ public class PlayerMovement : MonoBehaviour
 
     PlayerInput input;
     [SerializeField] Camera cam;
+    SunGame sunPot;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         input = GetComponent<PlayerInput>();
+        sunPot = FindFirstObjectByType<SunGame>();
     }
 
     // Update is called once per frame
@@ -42,6 +44,14 @@ public class PlayerMovement : MonoBehaviour
         if (ctx.performed)
         {
             mousePos = ctx.ReadValue<Vector2>();
+            if (sunPot.gameRunning)
+            {
+                Ray ray = cam.ScreenPointToRay(mousePos);
+                if (Physics.Raycast(ray, out RaycastHit hit, 200f, ~LayerMask.GetMask("Pot"), QueryTriggerInteraction.Ignore))
+                {
+                    sunPot.transform.parent.position = hit.point;
+                }
+            }
         }
     }
 
