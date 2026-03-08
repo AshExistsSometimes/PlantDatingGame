@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Saul
   characterBoxPortrait: {fileID: 0}
-  characterFullPortrait: {fileID: 0}
+  characterFullPortraits:
+  - {fileID: 21300000, guid: eca7115bba46fd58eadc7ca5d0f4463f, type: 3}
+  - {fileID: 21300000, guid: 5ac9d9dc1834913b1b643d7d1a76e160, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: eca7115bba46fd58eadc7ca5d0f4463f, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   messageChunks:
   - 'Good morning. '
   - 'You''re not quite a morning person, '
@@ -32,117 +38,3 @@ MonoBehaviour:
   - 0
   nextLine: {fileID: 0}
   dialogueVO: {fileID: 8300000, guid: 1c7b7153042f24b6a8a2a4f5e26835df, type: 3}
-  textSpeed:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -0.055179134
-      value: 0.088098325
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.91479695
-      value: 0.08807788
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1.6027894
-      value: 2.8286572
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 2.773107
-      value: 0.08689773
-      inSlope: -0.111303926
-      outSlope: -0.111303926
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 3.444061
-      value: 0.035662472
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 4.646475
-      value: 0.042310283
-      inSlope: -0.00010494511
-      outSlope: -0.00010494511
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 4.7976747
-      value: 0.4640393
-      inSlope: -0.00014484668
-      outSlope: -0.00014484668
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 5.119352
-      value: 0.08108954
-      inSlope: -0.00011491921
-      outSlope: -0.00011491921
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 7.4452605
-      value: 0.07467024
-      inSlope: 0.0006409026
-      outSlope: 0.0006409026
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 1
-    - serializedVersion: 3
-      time: 7.6313443
-      value: 0.18149112
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 8.087009
-      value: 0.074731335
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 12.647594
-      value: 0.09781416
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4

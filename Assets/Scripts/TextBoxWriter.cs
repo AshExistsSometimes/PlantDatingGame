@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.UI;
 
 public class TextBoxWriter : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class TextBoxWriter : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI textBox;
+    [SerializeField] GameObject dialogueBox;
+    [SerializeField] Image portrait;
 
     [SerializeField] AudioSource voicePlayer;
 
@@ -34,6 +37,7 @@ public class TextBoxWriter : MonoBehaviour
 
     public void ReadDialogue(DialogueLine dialogue)
     {
+        dialogueBox.SetActive(true);
         nameText.text = dialogue.characterName;
         if (dialogue.dialogueVO)
         {
@@ -41,8 +45,12 @@ public class TextBoxWriter : MonoBehaviour
             voicePlayer.Play();
         }
 
+        if (dialogue.characterFullPortraits.Length > 0 && dialogue.characterFullPortraits[0])
+        {
+            portrait.sprite = dialogue.characterFullPortraits[0];
+        }
         // Clear the text box
-        textBox.text = "";
+            textBox.text = "";
 
         StartCoroutine(WriteText(dialogue));
     }
@@ -56,6 +64,10 @@ public class TextBoxWriter : MonoBehaviour
             for (int j = 0; j < dialogue.messageChunks[i].Length; j++)
             {
                 textBox.text += dialogue.messageChunks[i][j];
+                if (dialogue.characterFullPortraits.Length > i && dialogue.characterFullPortraits[i])
+                {
+                    portrait.sprite = dialogue.characterFullPortraits[i];
+                }
                 yield return new WaitForSeconds(drawDelay);
             }
             // Wait for the current message chunk to be over. This isn't called until after the text is printed, so remove the time that has already passed

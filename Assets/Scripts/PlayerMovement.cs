@@ -9,12 +9,16 @@ public class PlayerMovement : MonoBehaviour
     PlayerInput input;
     [SerializeField] Camera cam;
     SunGame sunPot;
+    WaterGame waterGame;
+    DateChooser date;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         input = GetComponent<PlayerInput>();
         sunPot = FindFirstObjectByType<SunGame>();
+        waterGame = FindFirstObjectByType<WaterGame>();
+        date = FindFirstObjectByType<DateChooser>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (ctx.performed)
         {
+            // Try to move to another place
             Ray ray = cam.ScreenPointToRay(mousePos);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
@@ -35,6 +40,25 @@ public class PlayerMovement : MonoBehaviour
                     transform.position = point.travelPoint;
                     transform.rotation = Quaternion.Euler(point.travelEulerRotation);
                 }
+                else if (hit.collider.gameObject.TryGetComponent(out Saul saul))
+                {
+                    // Kill Saul :(
+                    Destroy(saul.gameObject);
+                    date.canSaul = false;
+                }
+            }
+            // Start watering
+            if (waterGame.gameRunning)
+            {
+                waterGame.pouringWater = true;
+            }
+        }
+        else if (ctx.canceled)
+        {
+            // Stop watering
+            if (waterGame.gameRunning)
+            {
+                waterGame.pouringWater = false;
             }
         }
     }
@@ -44,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         if (ctx.performed)
         {
             mousePos = ctx.ReadValue<Vector2>();
+            // Move the pot to the cursor
             if (sunPot.gameRunning)
             {
                 Ray ray = cam.ScreenPointToRay(mousePos);

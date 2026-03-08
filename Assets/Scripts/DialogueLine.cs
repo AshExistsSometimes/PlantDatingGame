@@ -6,7 +6,7 @@ public class DialogueLine : ScriptableObject
     
     public string characterName;
     public Sprite characterBoxPortrait;
-    public Sprite characterFullPortrait;
+    public Sprite[] characterFullPortraits;
 
     // Split into chunks to wait for the voiceover to catch up
     public string[] messageChunks;

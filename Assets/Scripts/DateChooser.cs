@@ -10,33 +10,48 @@ public class DateChooser : MonoBehaviour
     [SerializeField] int friendPoints = 5;
     [SerializeField] int datePoints = 7;
 
+    [SerializeField] TextBoxWriter textBox;
+
+    [SerializeField] DialogueLine saulDialogue;
+    [SerializeField] DialogueLine jasmineDialogue;
+    [SerializeField] DialogueLine ADDialogue;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        textBox = FindFirstObjectByType<TextBoxWriter>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PickDate();
+        }
     }
 
     void PickDate()
     {
 
-        if (jasmine > datePoints)
+        // He's here for you. He doesn't mind if you're not good with dating
+        if (canSaul)
         {
-
+            StartDate(saulDialogue);
+        }
+        else if (jasmine > datePoints)
+        {
+            StartDate(jasmineDialogue);
         }
         else if (AD > datePoints)
         {
-            
+            StartDate(ADDialogue);
         }
-        else if (canSaul)
-        {
+    }
 
-        }
+    void StartDate(DialogueLine dateDialogue)
+    {
+        textBox.ReadDialogue(dateDialogue);
     }
 }

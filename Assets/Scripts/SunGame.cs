@@ -45,6 +45,7 @@ public class SunGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             gameRunning = true;
+            sunSlider.gameObject.SetActive(true);
             gameTime = 0f;
             sunExposure = 0f;
         }
@@ -61,6 +62,7 @@ public class SunGame : MonoBehaviour
     void EndMinigame()
     {
         gameRunning = false;
+        sunSlider.gameObject.SetActive(false);
         // Choose who should get points based on the sunlight
         if (sunExposure >= sunThreshold3)
         {
@@ -70,6 +72,7 @@ public class SunGame : MonoBehaviour
         {
             date.AD += 1;
         }
+        // No sunlight for Saul :(
     }
 
 }
