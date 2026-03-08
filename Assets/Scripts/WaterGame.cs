@@ -26,17 +26,17 @@ public class WaterGame : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            gameRunning = true;
-            waterGiven = 0f;
-            waterIndicator.gameObject.SetActive(true);
-            wateringCan.SetActive(true);
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            EndGame();
-        }
+        // if (Input.GetKeyDown(KeyCode.W))
+        // {
+        //     gameRunning = true;
+        //     waterGiven = 0f;
+        //     waterIndicator.gameObject.SetActive(true);
+        //     wateringCan.SetActive(true);
+        // }
+        // else if (Input.GetKeyDown(KeyCode.E))
+        // {
+        //     EndGame();
+        // }
         if (pouringWater)
         {
             pourSpeed += pourSpeedRamp * Time.deltaTime;

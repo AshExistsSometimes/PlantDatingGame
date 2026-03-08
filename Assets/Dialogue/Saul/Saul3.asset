@@ -16,7 +16,7 @@ MonoBehaviour:
   characterBoxPortrait: {fileID: 0}
   characterFullPortraits: []
   messageChunks:
-  - 'Don''t worry doll, '
+  - 'Don''t worry melmosa, '
   - no hard feelings.
   - 'I know in the end you wanted me to prevail anyway. '
   - 'Who needs plants? '
@@ -30,7 +30,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  - 0
+  - 5
   nextLine: {fileID: 0}
   nextChoice: {fileID: 11400000, guid: 876e0520c795642c9bd2856d9ad23f7d, type: 2}
   dialogueVO: {fileID: 8300000, guid: 0f80527816a481b7580369a2dee77c60, type: 3}

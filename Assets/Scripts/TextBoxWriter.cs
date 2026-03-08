@@ -32,7 +32,7 @@ public class TextBoxWriter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && !waitingForLine)
         {
             ReadDialogue(tempDialogue);
         }
@@ -44,6 +44,8 @@ public class TextBoxWriter : MonoBehaviour
 
     public void ReadDialogue(DialogueLine dialogue)
     {
+        if (waitingForLine) return;
+
         dialogueBox.SetActive(true);
         nameText.text = dialogue.characterName;
         if (dialogue.dialogueVO)
@@ -66,7 +68,7 @@ public class TextBoxWriter : MonoBehaviour
 
     public IEnumerator WriteText(DialogueLine dialogue)
     {
-
+        waitingForLine = true;
         for (int i = 0; i < dialogue.messageChunks.Length; i++)
         {
             // Write each character, then wait briefly
@@ -83,9 +85,16 @@ public class TextBoxWriter : MonoBehaviour
             yield return new WaitForSeconds(dialogue.chunkDuration[i] - (drawDelay * dialogue.messageChunks[i].Length));
         }
 
+        yield return new WaitForSeconds(3f);
+        waitingForLine = false;
+
         if (dialogue.nextLine)
         {
-            StartCoroutine(WriteText(dialogue));
+            // Clear the text box
+            textBox.text = "";
+            //StartCoroutine(WriteText(dialogue.nextLine));
+            waitingForLine = false;
+            ReadDialogue(dialogue.nextLine);
         }
         else if (dialogue.nextChoice)
         {
@@ -97,6 +106,11 @@ public class TextBoxWriter : MonoBehaviour
 
     public void MakeChoice(int choice)
     {
+        // Clear the text box
+        textBox.text = "";
+        choiceButtons.SetActive(false);
+        Debug.Log("Making choice");
+        Debug.Log(lastDialogue);
         ReadDialogue(lastDialogue.nextChoice.choices[choice]);
     }
 

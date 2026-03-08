@@ -16,13 +16,13 @@ MonoBehaviour:
   characterBoxPortrait: {fileID: 0}
   characterFullPortraits: []
   messageChunks:
-  - 'Morning doll, '
+  - 'Morning melmosa, '
   - 'you''ll see despite your best efforts your plant didn''t make it, '
   - but something better did.
   chunkDuration:
   - 0
   - 0
-  - 0
+  - 5
   nextLine: {fileID: 0}
   nextChoice: {fileID: 11400000, guid: e6cabf20bde7265f09810b95e17c4465, type: 2}
   dialogueVO: {fileID: 8300000, guid: aff827576e3aed90da2cac70c8659c66, type: 3}

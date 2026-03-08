@@ -16,9 +16,9 @@ MonoBehaviour:
   characterBoxPortrait: {fileID: 0}
   characterFullPortraits: []
   messageChunks:
-  - "Good answer doll, Don't worry, this\u2019ll be my treat"
+  - "Good answer melmosa, Don't worry, this\u2019ll be my treat"
   chunkDuration:
-  - 0
+  - 10
   nextLine: {fileID: 0}
   nextChoice: {fileID: 0}
-  dialogueVO: {fileID: 0}
+  dialogueVO: {fileID: 8300000, guid: 6a1fd2b4c72b34f95ba1338b89896abc, type: 3}

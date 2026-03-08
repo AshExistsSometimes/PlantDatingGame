@@ -19,7 +19,7 @@ MonoBehaviour:
   messageChunks:
   - "I see where I\u2019m not wanted, See you around doll, best of luck."
   chunkDuration:
-  - 0
+  - 10
   nextLine: {fileID: 0}
   nextChoice: {fileID: 0}
-  dialogueVO: {fileID: 0}
+  dialogueVO: {fileID: 8300000, guid: b80e22fe14f707d68a222bd4e111f22b, type: 3}

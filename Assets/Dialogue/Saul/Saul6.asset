@@ -19,4 +19,4 @@ MonoBehaviour:
   chunkDuration: []
   nextLine: {fileID: 0}
   nextChoice: {fileID: 0}
-  dialogueVO: {fileID: 0}
+  dialogueVO: {fileID: 8300000, guid: dd24adaca6d0704e5b1782b0745558f7, type: 3}

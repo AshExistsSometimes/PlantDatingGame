@@ -17,11 +17,11 @@ MonoBehaviour:
   characterFullPortraits:
   - {fileID: 0}
   messageChunks:
-  - "You wound me doll, but let's not forget now\u2026. you tried real hard to  get
-    rid of me, well sorry doll. You got no honey in that hive but I'm willing to
-    forgive and forget If by chance I could take you out on a date"
+  - "You wound me melmosa, but let's not forget now\u2026. you tried real hard to
+    get rid of me, well sorry doll. You got no honey in that hive but I'm willing
+    to forgive and forget If by chance I could take you out on a date"
   chunkDuration:
-  - 0
+  - 15
   nextLine: {fileID: 0}
   nextChoice: {fileID: 11400000, guid: e805e88a88ad94317ba5c63ff41ea361, type: 2}
-  dialogueVO: {fileID: 0}
+  dialogueVO: {fileID: 8300000, guid: d449a09af4888f01d84857b88d3b876b, type: 3}
