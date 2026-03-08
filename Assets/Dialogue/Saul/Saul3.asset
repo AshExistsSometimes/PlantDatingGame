@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006c6c86cd0f217cd9e1012acee34bda, type: 3}
+  m_Name: Saul3
+  m_EditorClassIdentifier: 
+  characterName: Saul
+  characterBoxPortrait: {fileID: 0}
+  characterFullPortraits: []
+  messageChunks:
+  - 'Don''t worry doll, '
+  - no hard feelings.
+  - 'I know in the end you wanted me to prevail anyway. '
+  - 'Who needs plants? '
+  - 'They don''t have half the personality I got. '
+  - 'I''m Saul, '
+  - the garden slug you couldn't shake off.
+  chunkDuration:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  nextLine: {fileID: 0}
+  nextChoice: {fileID: 11400000, guid: 876e0520c795642c9bd2856d9ad23f7d, type: 2}
+  dialogueVO: {fileID: 8300000, guid: 0f80527816a481b7580369a2dee77c60, type: 3}

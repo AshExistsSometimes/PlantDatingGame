@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName="New Dialogue", menuName="Dialogue")]
+[CreateAssetMenu(fileName="New Dialogue", menuName="Dialogue/Line")]
 public class DialogueLine : ScriptableObject
 {
     
@@ -12,6 +12,7 @@ public class DialogueLine : ScriptableObject
     public string[] messageChunks;
     public float[] chunkDuration;
     public DialogueLine nextLine;
+    public DialogueChoice nextChoice;
     public AudioClip dialogueVO;
 
 }

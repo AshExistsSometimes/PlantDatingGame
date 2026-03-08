@@ -16,6 +16,11 @@ public class DateChooser : MonoBehaviour
     [SerializeField] DialogueLine jasmineDialogue;
     [SerializeField] DialogueLine ADDialogue;
 
+    [SerializeField] AudioSource backgroundMusicPlayer;
+    [SerializeField] AudioClip saulMusic;
+    [SerializeField] AudioClip jasmineMusic;
+    [SerializeField] AudioClip ADMusic;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,14 +44,20 @@ public class DateChooser : MonoBehaviour
         if (canSaul)
         {
             StartDate(saulDialogue);
+            backgroundMusicPlayer.resource = saulMusic;
+            backgroundMusicPlayer.Play();
         }
         else if (jasmine > datePoints)
         {
             StartDate(jasmineDialogue);
+            backgroundMusicPlayer.resource = jasmineMusic;
+            backgroundMusicPlayer.Play();
         }
         else if (AD > datePoints)
         {
             StartDate(ADDialogue);
+            backgroundMusicPlayer.resource = ADMusic;
+            backgroundMusicPlayer.Play();
         }
     }
 

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006c6c86cd0f217cd9e1012acee34bda, type: 3}
+  m_Name: Saul4
+  m_EditorClassIdentifier: 
+  characterName: Saul
+  characterBoxPortrait: {fileID: 0}
+  characterFullPortraits:
+  - {fileID: 0}
+  messageChunks:
+  - "You wound me doll, but let's not forget now\u2026. you tried real hard to  get
+    rid of me, well sorry doll. You got no honey in that hive but I'm willing to
+    forgive and forget If by chance I could take you out on a date"
+  chunkDuration:
+  - 0
+  nextLine: {fileID: 0}
+  nextChoice: {fileID: 11400000, guid: e805e88a88ad94317ba5c63ff41ea361, type: 2}
+  dialogueVO: {fileID: 0}

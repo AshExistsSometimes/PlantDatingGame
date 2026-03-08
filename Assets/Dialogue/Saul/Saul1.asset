@@ -36,5 +36,6 @@ MonoBehaviour:
   - 1
   - 0
   - 0
-  nextLine: {fileID: 0}
+  nextLine: {fileID: 11400000, guid: 5ce328eeeaabf598cb1e5195c3fb9f99, type: 2}
+  nextChoice: {fileID: 0}
   dialogueVO: {fileID: 8300000, guid: 1c7b7153042f24b6a8a2a4f5e26835df, type: 3}

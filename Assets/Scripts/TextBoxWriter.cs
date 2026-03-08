@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TextBoxWriter : MonoBehaviour
 {
-    
+
     [SerializeField] DialogueLine tempDialogue;
 
     // 60 times per second
@@ -17,6 +17,13 @@ public class TextBoxWriter : MonoBehaviour
     [SerializeField] Image portrait;
 
     [SerializeField] AudioSource voicePlayer;
+    [SerializeField] GameObject choiceButtons;
+    [SerializeField] TextMeshProUGUI choice1;
+    [SerializeField] TextMeshProUGUI choice2;
+
+    DialogueLine lastDialogue;
+
+    bool waitingForLine = false;
 
     void Start()
     {
@@ -50,7 +57,9 @@ public class TextBoxWriter : MonoBehaviour
             portrait.sprite = dialogue.characterFullPortraits[0];
         }
         // Clear the text box
-            textBox.text = "";
+        textBox.text = "";
+
+        lastDialogue = dialogue;
 
         StartCoroutine(WriteText(dialogue));
     }
@@ -73,6 +82,22 @@ public class TextBoxWriter : MonoBehaviour
             // Wait for the current message chunk to be over. This isn't called until after the text is printed, so remove the time that has already passed
             yield return new WaitForSeconds(dialogue.chunkDuration[i] - (drawDelay * dialogue.messageChunks[i].Length));
         }
+
+        if (dialogue.nextLine)
+        {
+            StartCoroutine(WriteText(dialogue));
+        }
+        else if (dialogue.nextChoice)
+        {
+            choiceButtons.SetActive(true);
+            choice1.text = dialogue.nextChoice.choiceStrings[0];
+            choice2.text = dialogue.nextChoice.choiceStrings[1];
+        }
+    }
+
+    public void MakeChoice(int choice)
+    {
+        ReadDialogue(lastDialogue.nextChoice.choices[choice]);
     }
 
 }
